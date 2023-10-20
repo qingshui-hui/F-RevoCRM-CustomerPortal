@@ -30,3 +30,5 @@ function Quotes_DetailView_Component($scope, $api, $webapp, $translatePartialLoa
       }
   angular.extend(this, new Portal_DetailView_Component($scope, $api, $webapp));
 }
+
+window.module.controller('Quotes_DetailView_Component', Quotes_DetailView_Component);

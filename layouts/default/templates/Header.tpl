@@ -108,7 +108,7 @@
 						<li ng-class="{'active':isActive('Home')}">
 							<a translate="Home" href="index.php"></a>
 						</li>
-						<li class="hidden-md hidden-sm hidden-lg" ng-repeat="module in modules|orderBy:'order'" ng-if="module!=='language' && module.name!=='ProjectTask' && module.name!=='ProjectMilestone'" ng-class="{'active':isActive(module.name)}">
+						<li class="hidden-md hidden-sm hidden-lg" ng-repeat="module in modules|orderModulesBy:'order'" ng-if="module!=='language' && module.name!=='ProjectTask' && module.name!=='ProjectMilestone'" ng-class="{'active':isActive(module.name)}">
 							<a translate="{{module.uiLabel}}" href="index.php?module={{module.name}}">
                                     {{module.uiLabel}}
                                 </a>

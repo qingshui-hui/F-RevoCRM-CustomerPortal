@@ -30,3 +30,5 @@ function Products_IndexView_Component($scope, $api, $webapp,$translatePartialLoa
     $scope.isCreateable = false;
     $scope.isEditable = false;
 }
+
+window.module.controller('Products_IndexView_Component', Products_IndexView_Component);

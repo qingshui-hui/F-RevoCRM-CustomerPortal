@@ -1261,3 +1261,7 @@ function Portal_CreateView_Component($scope, module, $modalInstance, api, webapp
 	}
 
 }
+window.module.controller('Portal_IndexView_Component', Portal_IndexView_Component);
+window.module.controller('Portal_DetailView_Component', Portal_DetailView_Component);
+window.module.controller('PortalProfile_DetailView_Component', PortalProfile_DetailView_Component);
+window.module.controller('Portal_CreateView_Component', Portal_CreateView_Component);

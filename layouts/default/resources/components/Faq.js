@@ -396,3 +396,7 @@ function Faq_Documents_Controller( $scope, $webapp, $api, module, recordId, $mod
 		$modalInstance.dismiss( 'cancel' );
 	}
 }
+
+window.module.controller('Faq_IndexView_Component', Faq_IndexView_Component);
+window.module.controller('Faq_Comments_Controller', Faq_Comments_Controller);
+window.module.controller('Faq_Documents_Controller', Faq_Documents_Controller);

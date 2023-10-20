@@ -192,3 +192,5 @@ function Home_Component($scope, $api, $webapp, $modal, sharedModalService, $tran
 		return true;
 	}
 }
+
+window.module.controller('Home_Component', Home_Component);
