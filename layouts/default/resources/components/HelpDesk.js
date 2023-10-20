@@ -966,3 +966,7 @@ function HelpDesk_EditView_Component($scope, $modalInstance, record, api, webapp
 				})
 	}
 }
+
+window.module.controller('HelpDesk_IndexView_Component', HelpDesk_IndexView_Component);
+window.module.controller('HelpDesk_DetailView_Component', HelpDesk_DetailView_Component);
+window.module.controller('HelpDesk_EditView_Component', HelpDesk_EditView_Component);

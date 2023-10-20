@@ -296,3 +296,7 @@ function globalSearchController($scope, $http, $timeout, $webapp, $translate) {
 		});
 	}
 }
+window.module.controller('MainController', MainController);
+window.module.controller('Main_Setting_Component', Main_Setting_Component);
+window.module.controller('ForgotPassword_Component', ForgotPassword_Component);
+window.module.controller('globalSearchController', globalSearchController);

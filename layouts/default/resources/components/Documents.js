@@ -151,3 +151,6 @@ function Documents_EditView_Component($scope, $modalInstance, record, api, webap
 		$modalInstance.dismiss('cancel');
 	}
 }
+
+window.module.controller('Documents_IndexView_Component', Documents_IndexView_Component);
+window.module.controller('Documents_EditView_Component', Documents_EditView_Component);

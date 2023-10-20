@@ -21,7 +21,7 @@ function parseBool(input) {
 /**
  * AngularJS
  */
-window.module = angular.module('portalapp', ['ui.bootstrap', 'ngProgress', 'monospaced.elastic', 'pascalprecht.translate', 'modelOptions', 'ui.select', 'ui.bootstrap.timepicker', 'ngSanitize', 'ngCsv', 'xeditable', 'ckeditor']);
+window.module = angular.module('portalapp', ['ui.bootstrap', 'ngProgress', 'monospaced.elastic', 'pascalprecht.translate', 'ui.select', 'ui.bootstrap.timepicker', 'ngSanitize', 'ngCsv', 'xeditable', 'ckeditor']);
 
 window.module.filter('unsafe', function ($sce) {
 	return function (val) {
@@ -53,31 +53,10 @@ window.module.factory('$deferred', function ($q) {
 
 	return {
 		create: function () {
-			// $q.promise does not provide ("then" callback)
-			// we try to implement by pushing error and result to "then" callback.
 			var deferred = $q.defer();
 
-			// Backup actual then handler, to provide customized promise methods (then, success, error)
-			var deferredThen = deferred.promise.then;
-
-			// Customize handlers
-			var thenFn = function () {
-			}, successFn = null, errorFn = null;
-			deferred.promise.success = function (fn) {
-				successFn = fn;
-			}
-			deferred.promise.error = function (fn) {
-				errorFn = fn;
-			}
-			deferred.promise.then = function (fn) {
-				thenFn = fn;
-			}
-
-			deferredThen(function (result) {
-				successFn ? successFn(result) : thenFn(null, result);
-			}, function (err) {
-				errorFn ? errorFn(err) : thenFn(err, null);
-			});
+			// 既に利用されているsuccessメソッドを変更しなくて済むようにするため。
+			deferred.promise.success = deferred.promise.then;
 
 			return deferred;
 		}
@@ -109,12 +88,13 @@ window.module.factory('$api', function ($deferred, $http) {
 		}
 		var deferred = $deferred.create();
 		$http(options)
-				.success(function (data, status, headers, config) {
+				.then(function ({data, status, headers, config}) {
+					console.log(data);
 					data.success ?
 							deferred.resolve(data.result, null) :
 							deferred.reject(data.error ? data.error.message : "No response");
 				})
-				.error(function (data, status, headers, config) {
+				.catch(function (data, status, headers, config) {
 					deferred.reject(data ? data : "ERR: " + status);
 				});
 		return deferred.promise;

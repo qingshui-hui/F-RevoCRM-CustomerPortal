@@ -170,3 +170,5 @@ function Project_DetailView_Component($scope, $api, $webapp, $translatePartialLo
         $scope.loadProjectMilestones(pageNo + 1)
     }
 }
+
+window.module.controller('Project_DetailView_Component', Project_DetailView_Component);

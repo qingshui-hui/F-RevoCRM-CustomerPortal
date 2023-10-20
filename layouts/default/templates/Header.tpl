@@ -16,39 +16,38 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-		<link rel="stylesheet" href="libraries/bootstrap/css/bootstrap.min.css" type="text/css" media="screen">
-		<link rel="stylesheet" href="libraries/jqueryaddons/selectric/selectric.css" type="text/css" media="screen">
-		<link rel="stylesheet" href="libraries/angularjsaddons/ngProgress/ngProgress.css" type="text/css" media="screen">
-		<link rel="stylesheet" href="libraries/angularuiaddons/ui-select-master/src/select.css" type="text/css" media="screen">
+		<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" type="text/css" media="screen">
+		<link rel="stylesheet" href="lib/jquery-selectric/selectric.css" type="text/css" media="screen">
+		<link rel="stylesheet" href="lib/ngprogress/ngProgress.css" type="text/css" media="screen">
+		<link rel="stylesheet" href="lib/angular-ui-select/select.min.css" type="text/css" media="screen">
 		<link rel="stylesheet" href="layouts/{portal_layout()}/resources/application.css" type="text/css" media="screen">
 		<link rel="stylesheet" href="layouts/{portal_layout()}/skins/default/styles.css" type="text/css" media="screen">
-		<link rel="stylesheet" href="libraries/angularjsaddons/angular-xeditable/css/xeditable.css">
-		<script type="text/javascript" src="libraries/jquery/jquery.min.js"></script>
-		<script type="text/javascript" src="libraries/bootstrap/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="libraries/jqueryaddons/purl.js"></script>
-		<script type="text/javascript" src="libraries/jqueryaddons/selectric/jquery.selectric.min.js"></script>
-		<script type="text/javascript" src="libraries/jqueryaddons/slimscroll/jquery.slimscroll.min.js"></script>
-		<script type="text/javascript" src="libraries/angularjs/angular.min.js"></script>
-		<script type="text/javascript" src="libraries/angularjs/angular-sanitize.min.js"></script>
-		<script type="text/javascript" src="libraries/angularui/ui-utils.min.js"></script>
-		<script type="text/javascript" src="libraries/angularui/ui-bootstrap-tpls-0.12.0.min.js"></script>
-		<script type="text/javascript" src="libraries/angularui/ui-tinymce.js"></script>
-		<script type="text/javascript" src="libraries/angularuiaddons/ui-select-master/src/select.js"></script>
-		<script type="text/javascript" src="libraries/angularjsaddons/elastic/elastic.js"></script>
-		<script type="text/javascript" src="libraries/angularjsaddons/ngProgress/ngProgress.min.js"></script>
-		<script type="text/javascript" src="libraries/angularuiaddons/timepicker/timepicker.js"></script>
-		<script type="text/javascript" src="libraries/angularjsaddons/angularjs-translate/angular-translate.js"></script>
-		<script type="text/javascript" src="libraries/angularjs/directives/modelOptions/ngModelOptions.min.js"></script>
-		<script type="text/javascript" src="libraries/angularjsaddons/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
-		<script type="text/javascript" src="libraries/angularjsaddons/ngCsv/ng-csv.js"></script>
-		<script type="text/javascript" src="libraries/angularjsaddons/angular-xeditable/js/xeditable.min.js"></script>
-		<script type="text/javascript" src="layouts/{portal_layout()}/resources/application.js"></script>
-		<script type="text/javascript" src="layouts/{portal_layout()}/resources/components/main.js"></script>
-		<script type="text/javascript" src="layouts/{portal_layout()}/resources/components/home.js"></script>
-		<script type="text/javascript" src="layouts/{portal_layout()}/resources/components/Portal.js"></script>
-		<script type="text/javascript" src="{portal_componentjs_file($MODULE)}"></script>
-		<script type="text/javascript" src="libraries/jqueryaddons/ckeditor/ckeditor.js"></script>
-		<script type="text/javascript" src="libraries/jqueryaddons/angular-ckeditor.js"></script>
+		<link rel="stylesheet" href="lib/angular-xeditable/dist/css/xeditable.min.css">
+		<script src="lib/jquery/dist/jquery.min.js"></script>
+		<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="lib/@allmarkedup/purl/purl.js"></script>
+		<script src="lib/jquery-selectric/js/jquery.selectric.min.js"></script>
+		<script src="lib/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+		<script src="lib/angular/angular.min.js"></script>
+		<script src="lib/angular-sanitize/angular-sanitize.min.js"></script>
+		<script src="libraries/angularui/ui-utils.min.js"></script>
+		<script src="lib/angular-ui-bootstrap/ui-bootstrap-tpls.min.js"></script>
+		<script src="lib/angular-ui-tinymce/dist/tinymce.min.js"></script>
+		<script src="lib/angular-ui-select/select.js"></script>
+		<script src="lib/angular-elastic/elastic.js"></script>
+		<script src="lib/ngprogress/build/ngProgress.min.js"></script>
+		<script src="libraries/angularuiaddons/timepicker/timepicker.js"></script>
+		<script src="lib/angular-translate/dist/angular-translate.min.js"></script>
+		<script src="lib/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
+		<script src="lib/ng-csv/build/ng-csv.min.js"></script>
+		<script src="lib/angular-xeditable/dist/js/xeditable.min.js"></script>
+		<script src="layouts/{portal_layout()}/resources/application.js"></script>
+		<script src="layouts/{portal_layout()}/resources/components/main.js"></script>
+		<script src="layouts/{portal_layout()}/resources/components/home.js"></script>
+		<script src="layouts/{portal_layout()}/resources/components/Portal.js"></script>
+		<script src="{portal_componentjs_file($MODULE)}"></script>
+		<script src="libraries/jqueryaddons/ckeditor/ckeditor.js"></script>
+		<script src="libraries/jqueryaddons/angular-ckeditor.js"></script>
 
 		<style type="text/css">
 			{
@@ -109,7 +108,7 @@
 						<li ng-class="{'active':isActive('Home')}">
 							<a translate="Home" href="index.php"></a>
 						</li>
-						<li class="hidden-md hidden-sm hidden-lg" ng-repeat="module in modules|orderBy:'order'" ng-if="module!=='language' && module.name!=='ProjectTask' && module.name!=='ProjectMilestone'" ng-class="{'active':isActive(module.name)}">
+						<li class="hidden-md hidden-sm hidden-lg" ng-repeat="module in modules|orderModulesBy:'order'" ng-if="module!=='language' && module.name!=='ProjectTask' && module.name!=='ProjectMilestone'" ng-class="{'active':isActive(module.name)}">
 							<a translate="{{module.uiLabel}}" href="index.php?module={{module.name}}">
                                     {{module.uiLabel}}
                                 </a>
