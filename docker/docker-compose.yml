@@ -1,0 +1,22 @@
+version: "3"
+services:
+  php:
+    image: frevo-portal-php
+    build:
+        context: '.'
+        dockerfile: ./php/Dockerfile
+    # restart: always
+    volumes:
+      - ./php/php.ini:/usr/local/etc/php/php.ini
+      - ./php/custom.httpd.conf:/etc/httpd/conf.d/custom.httpd.conf
+    ports:
+      - ${PORTAL_PORT}:80
+    environment:
+      # Xdebugの設定を有効にしたい場合は、mode=debug に変更してください
+      XDEBUG_CONFIG: "mode=off client_host=host.docker.internal client_port=9003 start_with_request=yes"
+      TZ: "Asia/Tokyo"
+      CRM_URL: '${CRM_URL}'
+      PORTAL_URL: '${PORTAL_URL}'
+      USER: www-data
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
